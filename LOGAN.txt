@@ -1,0 +1,6 @@
+LANDING PAGE: 	full display of campus with logo on left  & slogan to the right.
+		brief intro of school and its history to slide up on scroll.
+		
+		navbar to be fully visible on landing page and minimize on scroll.
+
+Menu/Nav button: to have drop down animation with nav buttons with animations from source; https://codepen.io/fluxus/full/gPWxXJ

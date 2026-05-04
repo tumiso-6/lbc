@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+     <!-- ── Loading Screen Overlay ─────────────────────────── -->
+  <div id="loading-screen">
+    <img
+      id="loading-logo"
+      src="lbcLogo.png"
+    />
+  </div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-logo">
@@ -48,21 +57,23 @@
         <!-- College Logo on the Left -->
         <div class="college-logo-container">
             <!-- Relative path to your local file -->
-            <img src="leaf.png" alt="Logan Business College Logo" class="college-logo">
+            <img src="lbcLogo2.png" alt="Logan Business College Logo" class="college-logo">
             <!-- <div class="logo-text">Logan Business College</div>
             <div class="logo-subtext">Excellence in Business Education</div> -->
         </div>
         
         <!-- Main Content -->
-        <div class="main-content">
-            <h1>Logan Business College</h1>
-            <p><span class="highlight">Education is The Nectar of Life</span></p>
-            <p>Empowering future business leaders with innovative education, practical skills, and a commitment to excellence since 1995.</p>
-            <div class="cta-buttons">
-                <a href="#programs" class="cta-button">Explore Programs</a>
-                <a href="#apply" class="cta-button secondary">Apply Now</a>
-            </div>
-        </div>
+       <div class="main-content">
+    <!-- h1 containing img for better accessibility -->
+    <h1 class="visually-hidden">Logan Business College</h1>
+    <img src="lbcLogo3.png" alt="" class="college-logo" aria-hidden="true">
+    
+    <p><span class="highlight">Education is The Nectar of Life</span></p>
+    <div class="cta-buttons">
+        <a href="#programs" class="cta-button">Explore Programs</a>
+        <a href="#apply" class="cta-button secondary">Apply Now</a>
+    </div>
+    </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -131,7 +142,61 @@
             </div>
         </div>
     </section>
-
+    
+    <section class="content-section">
+        <div class="container1">
+        <h2 class="section-title">Our Learning Modules</h2>
+        <p class="section-subtitle">Explore our comprehensive business education modules</p>
+        <div class="slider-wrapper">
+           <div class="card-list" id="cardCarousel">
+            <!-- Card items will be dynamically added here -->
+                <div class="card-item">
+                    <img src="pic2.jpg" alt="Business Fundamentals" class="user-image">
+                    <h2 class="module-name">Business Fundamentals</h2>
+                    <p class="description">Learn the core principles of business management, finance, and marketing strategies.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                 <div class="card-item">
+                    <img src="pic2.jpg" alt="Leadership Skills" class="user-image">
+                    <h2 class="module-name">Leadership & Management</h2>
+                    <p class="description">Develop essential leadership skills and learn effective team management techniques.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+              <div class="card-item">
+                    <img src="pic2.jpg" alt="Digital Marketing" class="user-image">
+                    <h2 class="module-name">Digital Marketing</h2>
+                    <p class="description">Master online marketing strategies including SEO, social media, and content marketing.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="card-item">
+                    <img src="pic2.jpg" alt="Financial Analysis" class="user-image">
+                    <h2 class="module-name">Financial Analysis</h2>
+                    <p class="description">Learn financial modeling, budgeting, and investment analysis techniques.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                    <div class="card-item">
+                    <img src="pic2.jpg" alt="Entrepreneurship" class="user-image">
+                    <h2 class="module-name">Entrepreneurship</h2>
+                    <p class="description">From ideation to launch, learn how to build and grow successful startups.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+        
+                 <!-- Navigation Buttons -->
+                    <div class="slider-nav">
+                     <button class="slider-nav-btn prev-btn" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                     </button>
+                    <div class="dots-container" id="carouselDots">
+            <!-- Dots will be generated by JavaScript -->
+                    </div>
+                         <button class="slider-nav-btn next-btn" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                        </button>
+                     </div>
+                 </div>
+</div>
+</section>
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="footer-content">
