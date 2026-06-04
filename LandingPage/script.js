@@ -47,16 +47,16 @@ function handleScroll() {
     }
 
     // Close sidebar if open and user scrolls down
-    if (sidebarMenu.classList.contains('active') && scrollTop > lastScrollTop && scrollTop > 400) {
+    if (sidebarMenu && sidebarMenu.classList.contains('active') && scrollTop > lastScrollTop && scrollTop > 400) {
         sidebarMenu.classList.remove('active');
-        menuButton.classList.remove('active');
+        if (menuButton) menuButton.classList.remove('active');
     }
 
     lastScrollTop = scrollTop;
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-        if (isScrollingDown && scrollTop > 400 && !sidebarMenu.classList.contains('active') && window.innerWidth <= 992) {
+        if (isScrollingDown && scrollTop > 400 && sidebarMenu && !sidebarMenu.classList.contains('active') && window.innerWidth <= 992) {
             menuButton.style.display = 'flex';
             menuButton.classList.add('visible');
         }
@@ -98,7 +98,6 @@ const cardObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('.program-card').forEach((card, index) => {
-    // Stagger each card by its position among siblings
     const siblings = Array.from(card.parentElement.children);
     const siblingIndex = siblings.indexOf(card);
     card.style.transitionDelay = `${siblingIndex * 0.12}s`;
@@ -142,32 +141,58 @@ document.querySelectorAll('.section-title').forEach(title => {
     titleObserver.observe(title);
 });
 
+// Observe .inv-card (About page inverted radii cards)
+const invCardObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+
+document.querySelectorAll('.inv-card').forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.1}s`;
+    invCardObserver.observe(card);
+});
+
 // ── SIDEBAR & MENU ────────────────────────────────────────────────────────
 
-menuButton.addEventListener('click', function (e) {
-    e.stopPropagation();
-    const isOpening = !sidebarMenu.classList.contains('active');
-    sidebarMenu.classList.toggle('active');
-    menuButton.classList.toggle('active');
-    if (isOpening) {
-        menuButton.style.display = 'flex';
-        menuButton.classList.add('visible');
-    }
-});
+if (menuButton) {
+    menuButton.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpening = !sidebarMenu.classList.contains('active');
+        sidebarMenu.classList.toggle('active');
+        menuButton.classList.toggle('active');
+        if (isOpening) {
+            menuButton.style.display = 'flex';
+            menuButton.classList.add('visible');
+        }
+    });
+}
 
 navLinks.forEach(link => {
     link.addEventListener('click', function () {
-        sidebarMenu.classList.remove('active');
-        menuButton.classList.remove('active');
+        if (sidebarMenu) {
+            sidebarMenu.classList.remove('active');
+        }
+        if (menuButton) {
+            menuButton.classList.remove('active');
+        }
     });
 });
 
 document.addEventListener('click', function (event) {
+    if (!sidebarMenu) return;
     const isClickInsideSidebar = sidebarMenu.contains(event.target);
-    const isClickOnMenuButton = menuButton.contains(event.target);
+    const isClickOnMenuButton = menuButton && menuButton.contains(event.target);
     if (!isClickInsideSidebar && !isClickOnMenuButton && sidebarMenu.classList.contains('active')) {
         sidebarMenu.classList.remove('active');
-        menuButton.classList.remove('active');
+        if (menuButton) menuButton.classList.remove('active');
     }
 });
 
@@ -175,25 +200,31 @@ document.addEventListener('click', function (event) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         if (this.getAttribute('href') === '#') return;
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        if (targetElement) {
-            window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+        const targetId = this.getAttribute('href');
+        // Only handle internal page anchors (starts with # and not external page links)
+        if (targetId.startsWith('#') && !targetId.includes('.html')) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+            }
         }
     });
 });
 
-menuButton.addEventListener('mouseenter', function () {
-    if (!this.classList.contains('active')) this.style.transform = 'scale(1.1)';
-});
-menuButton.addEventListener('mouseleave', function () {
-    if (!this.classList.contains('active')) this.style.transform = 'scale(1)';
-});
+if (menuButton) {
+    menuButton.addEventListener('mouseenter', function () {
+        if (!this.classList.contains('active')) this.style.transform = 'scale(1.1)';
+    });
+    menuButton.addEventListener('mouseleave', function () {
+        if (!this.classList.contains('active')) this.style.transform = 'scale(1)';
+    });
+}
 
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && sidebarMenu.classList.contains('active')) {
+    if (e.key === 'Escape' && sidebarMenu && sidebarMenu.classList.contains('active')) {
         sidebarMenu.classList.remove('active');
-        menuButton.classList.remove('active');
+        if (menuButton) menuButton.classList.remove('active');
     }
 });
 
@@ -204,21 +235,23 @@ window.scrollTo(0, 0);
 window.addEventListener('load', handleScroll);
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 992) {
+    if (window.innerWidth > 992 && menuButton) {
         menuButton.style.display = 'none';
         menuButton.classList.remove('visible');
     }
 });
 
-// ── CARD CAROUSEL ─────────────────────────────────────────────────────────
+// ── CARD CAROUSEL (only if elements exist on page) ──────────────────────
 
 function initializeCardCarousel() {
     const carousel = document.getElementById('cardCarousel');
+    if (!carousel) return;
+    
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const dotsContainer = document.getElementById('carouselDots');
 
-    if (!carousel) return;
+    if (!prevBtn || !nextBtn || !dotsContainer) return;
 
     let currentPosition = 0;
     let isAnimating = false;
@@ -261,8 +294,8 @@ function initializeCardCarousel() {
         const dotIndex = Math.round(currentPosition / cardWidth);
         document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === dotIndex));
 
-        prevBtn.disabled = currentPosition <= 0;
-        nextBtn.disabled = currentPosition >= maxPosition;
+        if (prevBtn) prevBtn.disabled = currentPosition <= 0;
+        if (nextBtn) nextBtn.disabled = currentPosition >= maxPosition;
 
         setTimeout(() => { isAnimating = false; }, instant ? 0 : 500);
     }
@@ -290,8 +323,11 @@ function initializeCardCarousel() {
     nextBtn.addEventListener('click', () => { stopAutoScroll(); nextSlide(); startAutoScroll(); });
     prevBtn.addEventListener('click', () => { stopAutoScroll(); prevSlide(); startAutoScroll(); });
 
-    carousel.parentElement.addEventListener('mouseenter', stopAutoScroll);
-    carousel.parentElement.addEventListener('mouseleave', startAutoScroll);
+    const sliderWrapper = carousel.parentElement;
+    if (sliderWrapper) {
+        sliderWrapper.addEventListener('mouseenter', stopAutoScroll);
+        sliderWrapper.addEventListener('mouseleave', startAutoScroll);
+    }
 
     let startX = 0;
     let isDragging = false;
@@ -319,12 +355,14 @@ function initializeCardCarousel() {
 
 document.addEventListener('DOMContentLoaded', initializeCardCarousel);
 
-// ── LOADING SCREEN ────────────────────────────────────────────────────────
+// ── LOADING SCREEN (only if exists on page) ──────────────────────────────
 
 (function () {
     const screen = document.getElementById('loading-screen');
-    setTimeout(function () {
-        screen.classList.add('fade-out');
-        screen.addEventListener('transitionend', function () { screen.remove(); }, { once: true });
-    }, 3500);
+    if (screen) {
+        setTimeout(function () {
+            screen.classList.add('fade-out');
+            screen.addEventListener('transitionend', function () { screen.remove(); }, { once: true });
+        }, 3500);
+    }
 })();
