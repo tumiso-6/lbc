@@ -355,14 +355,30 @@ function initializeCardCarousel() {
 
 document.addEventListener('DOMContentLoaded', initializeCardCarousel);
 
-// ── LOADING SCREEN (only if exists on page) ──────────────────────────────
+// ── LOADING SCREEN (only on first visit) ──────────────────────────────
 
 (function () {
     const screen = document.getElementById('loading-screen');
-    if (screen) {
+    if (!screen) return;
+    
+    // Check if this is the first visit using sessionStorage
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    
+    if (!hasVisited) {
+        // First visit - show loading screen with animation
         setTimeout(function () {
             screen.classList.add('fade-out');
-            screen.addEventListener('transitionend', function () { screen.remove(); }, { once: true });
+            // Mark as visited
+            sessionStorage.setItem('hasVisited', 'true');
+            
+            // Remove the loading screen element after transition
+            screen.addEventListener('transitionend', function () { 
+                screen.remove(); 
+            }, { once: true });
         }, 3500);
+    } else {
+        // Returning visitor - hide loading screen immediately
+        screen.style.display = 'none';
+        screen.remove(); // Remove from DOM entirely
     }
 })();

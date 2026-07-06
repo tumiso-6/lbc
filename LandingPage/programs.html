@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs | LBC College</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Your consolidated CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo-text">
+            <i class="fas fa-graduation-cap"></i> LBC College
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html" class="active">Programs</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="programs.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="menu-button" id="menuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="programs.html" class="active"><i class="fas fa-book"></i> Programs</a></li>
+            <li><a href="admissions.html"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- PROGRAMS HERO -->
+    <section class="programs-hero">
+        <h1><i class="fas fa-graduation-cap"></i> Our Programs</h1>
+        <p>Discover our comprehensive range of programs designed to prepare you for a successful career in your chosen field. From business to technology, we offer quality education that meets industry standards.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size: 0.6rem; margin: 0 8px;"></i> Programs
+        </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" id="filterBar">
+        <div class="filter-bar-inner">
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <span class="filter-label"><i class="fas fa-filter"></i> Filter:</span>
+                <div class="filter-chips" id="filterChips">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="business">Business</button>
+                    <button class="filter-chip" data-filter="technology">Technology</button>
+                    <button class="filter-chip" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-chip" data-filter="arts">Arts & Design</button>
+                </div>
+            </div>
+            <div class="filter-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search programs..." />
+            </div>
+        </div>
+    </div>
+
+    <!-- PROGRAMS SECTION -->
+    <section class="programs-section">
+        <div class="programs-grid-wrapper">
+            
+            <!-- Programs Grid -->
+            <div class="programs-grid" id="programsGrid">
+                
+                <!-- Program Card 1 - Business -->
+                <div class="program-card-modern" data-category="business" data-name="business administration">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop" alt="Business Administration" />
+                        <span class="program-card-badge popular">Popular</span>
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-briefcase"></i> Business</span>
+                        <h3><i class="fas fa-chart-line"></i> Business Administration</h3>
+                        <p>Learn essential business skills including management, finance, and strategic planning for today's competitive market.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 3 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 2 - Technology -->
+                <div class="program-card-modern" data-category="technology" data-name="computer science">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" alt="Computer Science" />
+                        <span class="program-card-badge new">New</span>
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-code"></i> Technology</span>
+                        <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+                        <p>Master programming, algorithms, and software development with hands-on projects and real-world applications.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 4 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 3 - Healthcare -->
+                <div class="program-card-modern" data-category="healthcare" data-name="nursing">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop" alt="Nursing" />
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-heartbeat"></i> Healthcare</span>
+                        <h3><i class="fas fa-user-md"></i> Nursing</h3>
+                        <p>Develop clinical skills and compassionate care through comprehensive training in patient care and medical knowledge.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 4 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 4 - Arts & Design -->
+                <div class="program-card-modern" data-category="arts" data-name="graphic design">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Graphic Design" />
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-palette"></i> Arts & Design</span>
+                        <h3><i class="fas fa-pen-fancy"></i> Graphic Design</h3>
+                        <p>Unleash your creativity with professional training in visual communication, typography, and digital design tools.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 3 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 5 - Business -->
+                <div class="program-card-modern" data-category="business" data-name="marketing">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=600&fit=crop" alt="Marketing" />
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-briefcase"></i> Business</span>
+                        <h3><i class="fas fa-bullhorn"></i> Marketing</h3>
+                        <p>Learn digital marketing strategies, consumer behavior, and brand management for the modern business landscape.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 3 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 6 - Technology -->
+                <div class="program-card-modern" data-category="technology" data-name="data science">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Data Science" />
+                        <span class="program-card-badge popular">Popular</span>
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-code"></i> Technology</span>
+                        <h3><i class="fas fa-database"></i> Data Science</h3>
+                        <p>Analyze and interpret complex data using machine learning, statistics, and visualization techniques.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 4 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 7 - Healthcare -->
+                <div class="program-card-modern" data-category="healthcare" data-name="pharmacy">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&h=600&fit=crop" alt="Pharmacy" />
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-heartbeat"></i> Healthcare</span>
+                        <h3><i class="fas fa-prescription-bottle-alt"></i> Pharmacy</h3>
+                        <p>Study pharmaceutical sciences, drug development, and patient care in our state-of-the-art pharmacy program.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 5 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 8 - Arts -->
+                <div class="program-card-modern" data-category="arts" data-name="animation">
+                    <div class="program-card-image">
+                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop" alt="Animation" />
+                        <span class="program-card-badge new">New</span>
+                    </div>
+                    <div class="program-card-body">
+                        <span class="program-category"><i class="fas fa-palette"></i> Arts & Design</span>
+                        <h3><i class="fas fa-film"></i> Animation & VFX</h3>
+                        <p>Create stunning visual effects and animations using industry-standard software and techniques.</p>
+                        <div class="program-card-footer">
+                            <span class="program-duration"><i class="far fa-calendar-alt"></i> 3 Years</span>
+                            <a href="#" class="btn-learn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search"></i>
+                <h3>No Programs Found</h3>
+                <p>We couldn't find any programs matching your search. Try adjusting your filters.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="programs-stats">
+                <div class="stat">
+                    <div class="stat-number" id="programCount">8</div>
+                    <div class="stat-label">Programs Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Fields of Study</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3-5</div>
+                    <div class="stat-label">Years Duration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <img src="lbc-logo-white.png" alt="LBC College" class="footer-logo" />
+                <p>LBC College is committed to providing quality education that prepares students for successful careers.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html" style="color: var(--color-text-light); text-decoration: none;">About Us</a></li>
+                    <li><a href="programs.html" style="color: var(--color-text-light); text-decoration: none;">Programs</a></li>
+                    <li><a href="admissions.html" style="color: var(--color-text-light); text-decoration: none;">Admissions</a></li>
+                    <li><a href="contact.html" style="color: var(--color-text-light); text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Education St, City</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@lbccollege.edu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LBC College. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="programs.js"></script>
+</body>
+</html>

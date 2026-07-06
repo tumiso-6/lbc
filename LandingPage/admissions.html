@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions — Logan BC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /> -->
+  <link rel="Stylesheet" href="style.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef4ff', 100: '#d9e6ff', 200: '#bcd3ff', 300: '#8eb5ff',
+              400: '#598dff', 500: '#3366ff', 600: '#1f48f5', 700: '#1736e1',
+              800: '#192db6', 900: '#1a2c8f', 950: '#151c57'
+            },
+            ink: '#0b1220'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<!--<body class="font-sans bg-slate-50 text-slate-800 antialiased"> -->
+
+  <!-- ============ NAVBAR ============ -->
+   <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <div class="nav-logo-text">LOGAN BUSINESS COLLEGE</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menu Button (Initially hidden) -->
+    <div class="menu-button" id="menuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <ul class="sidebar-links">
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About LBC</a></li>
+            <li><a href="programs.html"><i class="fas fa-graduation-cap"></i> Programs</a></li>
+            <li><a href="admissions.html"><i class="fas fa-file-alt"></i> Admissions</a></li>
+            <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="#campus"><i class="fas fa-university"></i> Campus Life</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#apply"><i class="fas fa-edit"></i> Apply Now</a></li>
+        </ul>
+    </div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 30%, rgba(89,141,255,0.7) 0, transparent 40%), radial-gradient(circle at 80% 70%, rgba(51,102,255,0.4) 0, transparent 40%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-sm text-brand-300 mb-4 flex items-center gap-2">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-white">Admissions</span>
+      </nav>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Admissions</h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl">Your journey starts here. Learn everything you need to know about joining the Logan BC community.</p>
+    </div>
+  </section>
+
+  <!-- ============ ADMISSIONS INTRO ============ -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-brand-600 font-semibold uppercase tracking-wider text-sm">Welcome</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">Begin your application journey</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">At Logan BC, we welcome ambitious students from all backgrounds. Our admissions process is designed to be transparent and supportive, guiding you from inquiry to enrollment.</p>
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 grid place-items-center flex-shrink-0"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Simple online application</h4>
+                <p class="text-sm text-slate-600">Complete your application in under 30 minutes.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 grid place-items-center flex-shrink-0"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-900">No application fee</h4>
+                <p class="text-sm text-slate-600">We believe opportunity should be accessible to all.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 grid place-items-center flex-shrink-0"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-semibold text-slate-900">Quick decision turnaround</h4>
+                <p class="text-sm text-slate-600">Hear back from us within 2 weeks of applying.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="http://static.photos/education/640x360/22" alt="Students" class="rounded-3xl shadow-2xl w-full h-[420px] object-cover" />
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 w-56 hidden sm:block">
+            <div class="text-2xl font-extrabold text-brand-700">2,500+</div>
+            <div class="text-sm text-slate-500">New students admitted each year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REQUIREMENTS ============ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-600 font-semibold uppercase tracking-wider text-sm">Requirements</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">What you'll need to apply</h2>
+        <p class="mt-4 text-slate-600">Make sure you have the following documents ready before starting your application.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="req-card">
+          <div class="icon-wrap bg-brand-100 text-brand-700"><i data-lucide="file-text"></i></div>
+          <h3>Completed Application Form</h3>
+          <p>Fill out our online application with your personal and academic details.</p>
+        </div>
+        <div class="req-card">
+          <div class="icon-wrap bg-amber-100 text-amber-700"><i data-lucide="graduation-cap"></i></div>
+          <h3>Academic Transcripts</h3>
+          <p>Official transcripts from your previous school or institution.</p>
+        </div>
+        <div class="req-card">
+          <div class="icon-wrap bg-emerald-100 text-emerald-700"><i data-lucide="pen-line"></i></div>
+          <h3>Personal Statement</h3>
+          <p>A 500-word essay describing your goals and why you chose Logan BC.</p>
+        </div>
+        <div class="req-card">
+          <div class="icon-wrap bg-rose-100 text-rose-700"><i data-lucide="user-check"></i></div>
+          <h3>Letters of Recommendation</h3>
+          <p>Two letters from teachers or mentors who can speak to your abilities.</p>
+        </div>
+        <div class="req-card">
+          <div class="icon-wrap bg-violet-100 text-violet-700"><i data-lucide="languages"></i></div>
+          <h3>English Proficiency</h3>
+          <p>TOEFL or IELTS scores for international applicants.</p>
+        </div>
+        <div class="req-card">
+          <div class="icon-wrap bg-cyan-100 text-cyan-700"><i data-lucide="id-card"></i></div>
+          <h3>Valid ID</h3>
+          <p>A government-issued identification document or passport.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-600 font-semibold uppercase tracking-wider text-sm">Process</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">Admissions timeline</h2>
+        <p class="mt-4 text-slate-600">Follow these simple steps to join our community.</p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-brand-200 md:-translate-x-px"></div>
+
+        <div class="space-y-10">
+          <div class="step-row md:text-right">
+            <div class="step-dot"></div>
+            <div class="step-content">
+              <span class="step-badge">Step 1</span>
+              <h3>Inquiry & Research</h3>
+              <p>Explore our programs and reach out to our admissions team with any questions you may have.</p>
+            </div>
+          </div>
+          <div class="step-row md:flex-row-reverse">
+            <div class="step-dot"></div>
+            <div class="step-content">
+              <span class="step-badge">Step 2</span>
+              <h3>Submit Application</h3>
+              <p>Complete the online application form and upload all required documents.</p>
+            </div>
+          </div>
+          <div class="step-row md:text-right">
+            <div class="step-dot"></div>
+            <div class="step-content">
+              <span class="step-badge">Step 3</span>
+              <h3>Interview</h3>
+              <p>Selected applicants will be invited for a brief virtual interview with our admissions panel.</p>
+            </div>
+          </div>
+          <div class="step-row md:flex-row-reverse">
+            <div class="step-dot"></div>
+            <div class="step-content">
+              <span class="step-badge">Step 4</span>
+              <h3>Decision & Enrollment</h3>
+              <p>Receive your admission decision and confirm your enrollment to secure your spot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEY DATES ============ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-600 font-semibold uppercase tracking-wider text-sm">Deadlines</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">Key dates for 2025 intake</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="date-card border-l-brand-500">
+          <div class="text-sm text-brand-600 font-semibold">Early Decision</div>
+          <div class="text-3xl font-extrabold text-slate-900 mt-1">Nov 15</div>
+          <div class="text-slate-500 text-sm mt-1">2024</div>
+          <p class="mt-3 text-sm text-slate-600">For students who have Logan BC as their first choice.</p>
+        </div>
+        <div class="date-card border-l-amber-500">
+          <div class="text-sm text-amber-600 font-semibold">Regular Decision</div>
+          <div class="text-3xl font-extrabold text-slate-900 mt-1">Jan 31</div>
+          <div class="text-slate-500 text-sm mt-1">2025</div>
+          <p class="mt-3 text-sm text-slate-600">Standard application deadline for all programs.</p>
+        </div>
+        <div class="date-card border-l-emerald-500">
+          <div class="text-sm text-emerald-600 font-semibold">Financial Aid</div>
+          <div class="text-3xl font-extrabold text-slate-900 mt-1">Feb 28</div>
+          <div class="text-slate-500 text-sm mt-1">2025</div>
+          <p class="mt-3 text-sm text-slate-600">Submit your scholarship and aid applications.</p>
+        </div>
+        <div class="date-card border-l-rose-500">
+          <div class="text-sm text-rose-600 font-semibold">Enrollment</div>
+          <div class="text-3xl font-extrabold text-slate-900 mt-1">May 1</div>
+          <div class="text-slate-500 text-sm mt-1">2025</div>
+          <p class="mt-3 text-sm text-slate-600">Confirm your enrollment and secure your place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-brand-600 font-semibold uppercase tracking-wider text-sm">FAQ</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">Frequently asked questions</h2>
+      </div>
+      <div id="faq" class="space-y-4">
+        <div class="faq-item">
+          <button class="faq-q"><span>What is the application fee?</span><i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition"></i></button>
+          <div class="faq-a"><p>There is no application fee at Logan BC. We believe in making education accessible to everyone.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Can I apply to multiple programs?</span><i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition"></i></button>
+          <div class="faq-a"><p>Yes, you can apply to up to two programs in a single application. Your primary choice will be reviewed first.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you offer scholarships?</span><i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition"></i></button>
+          <div class="faq-a"><p>Absolutely. We offer merit-based, need-based, and athletic scholarships. Submit your financial aid application by February 28.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Are international students eligible?</span><i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition"></i></button>
+          <div class="faq-a"><p>Yes, we welcome international students. Additional requirements include English proficiency test scores and a valid passport.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="py-16 bg-gradient-to-br from-brand-700 to-brand-950">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-extrabold text-white">Ready to apply?</h2>
+      <p class="mt-3 text-brand-200">Take the first step toward your future at Logan BC.</p>
+      <a href="apply.html" class="mt-6 inline-flex btn-primary text-base bg-white text-brand-700 hover:bg-brand-50">Start Application <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="https://cdn.logojoy.com/wp-content/uploads/20230621140450/business-college-logo.png" alt="Logan Business College Logo" class="footer-logo">
+                <p>Preparing business leaders since 1995 with innovative, practical education that drives career success and organizational growth.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #d4af37;"></i> 123 Business Avenue, Suite 500</li>
+                    <li><i class="fas fa-phone" style="margin-right: 10px; color: #d4af37;"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px; color: #d4af37;"></i> admissions@loganbusiness.edu</li>
+                    <li><i class="fas fa-clock" style="margin-right: 10px; color: #d4af37;"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home" style="color: #b0c4de; text-decoration: none;">Home</a></li>
+                    <li><a href="#about" style="color: #b0c4de; text-decoration: none;">About</a></li>
+                    <li><a href="#programs" style="color: #b0c4de; text-decoration: none;">Programs</a></li>
+                    <li><a href="admissions.html" style="color: #b0c4de; text-decoration: none;">Admissions</a></li>
+                    <li><a href="#contact" style="color: #b0c4de; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Logan Business College. All rights reserved. | <a href="#" style="color: #d4af37; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #d4af37; text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="admissionscript.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
